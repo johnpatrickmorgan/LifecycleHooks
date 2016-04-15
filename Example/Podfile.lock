@@ -1,0 +1,14 @@
+PODS:
+  - LifecycleHooks (0.1.0)
+
+DEPENDENCIES:
+  - LifecycleHooks (from `../`)
+
+EXTERNAL SOURCES:
+  LifecycleHooks:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LifecycleHooks: 060d9b71b63b91529c485fcb41df023cc70193fc
+
+COCOAPODS: 0.39.0
