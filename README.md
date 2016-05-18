@@ -40,6 +40,7 @@ In most circumstances subclassing is sufficient to add lifecycle-dependent code 
 
 - When writing a `UIViewController` extension.
 - When you need to customize a view controller from a third-party library, where you are not responsible for instantiating the view controller yourself.
+- When adding a lifecycle-based behaviour to a view controller whose type is not known until runtime.
 - Where multiple actions need to be added but singular inheritance makes this impractical.
 - When writing tests for a view controller, e.g., where a test expectation should be fulfilled after a particular lifecycle event.
 
