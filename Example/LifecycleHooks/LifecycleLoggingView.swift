@@ -14,6 +14,6 @@ class LifecycleLoggingView: UIView {
         
         super.didMoveToWindow()
         
-        print("Native \(__FUNCTION__)")
+        print("Native \(#function)")
     }
 }

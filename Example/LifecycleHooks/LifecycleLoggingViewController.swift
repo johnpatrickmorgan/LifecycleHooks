@@ -16,34 +16,41 @@ class LifecycleLoggingViewController: UIViewController {
         
         super.viewDidLoad()
 
-        print("Native \(__FUNCTION__)")
+        logLifecycleMethod()
+
     }
 
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
         
-        print("Native \(__FUNCTION__)")
+        logLifecycleMethod()
     }
     
     override func viewDidAppear(animated: Bool) {
         
         super.viewDidAppear(animated)
         
-        print("Native \(__FUNCTION__)")
+        logLifecycleMethod()
     }
     
     override func viewWillDisappear(animated: Bool) {
         
         super.viewWillDisappear(animated)
         
-        print("Native \(__FUNCTION__)")
+        logLifecycleMethod()
     }
     
     override func viewDidDisappear(animated: Bool) {
         
         super.viewDidDisappear(animated)
         
-        print("Native \(__FUNCTION__)")
+        logLifecycleMethod()
+    }
+    
+    func logLifecycleMethod(methodName: String = #function) {
+        
+        print("Native \(methodName)")
+        
     }
 }

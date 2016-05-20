@@ -9,8 +9,8 @@
 /// A general protocol for objects that can ensure provided actions are performed after certain lifecycle hooks.
 public protocol LifecycleHooking {
     
-    typealias Hook
-    typealias Action
+    associatedtype Hook
+    associatedtype Action
     
     func on(hook: Hook, onceOnly: Bool, priority: HookPriority, perform: Action) -> Cancellable?
 }
