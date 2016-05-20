@@ -81,7 +81,7 @@ extension UIViewController: LifecycleHooking {
         
         return self.onViewDidLoad(immediatelyIfAlreadyLoaded: true, priority: priority) { [weak self] _ in
             
-            self?.view.on(hook, onceOnly: onceOnly) { [weak self] in
+            self?.view.on(hook, onceOnly: onceOnly) {
                 action()
             }
         }
