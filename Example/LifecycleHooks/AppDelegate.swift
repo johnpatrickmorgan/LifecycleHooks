@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Hooked viewDidLoad")
             }
             
-            testViewController.onView(.DidMoveToWindow) { _ in
+            testViewController.onView(.DidMoveToWindow) {
                 print("Hooked didMoveToWindow")
             }
             

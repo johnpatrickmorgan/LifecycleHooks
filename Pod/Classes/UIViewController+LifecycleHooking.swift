@@ -77,12 +77,12 @@ extension UIViewController: LifecycleHooking {
      
      - returns: A cancellable object, on which `cancel()` can be called.
      */
-    public func onView(hook: ViewLifecycleHook, onceOnly: Bool = false, priority: HookPriority = .Medium, perform action: (window: UIWindow?) -> Void) -> Cancellable? {
+    public func onView(hook: ViewLifecycleHook, onceOnly: Bool = false, priority: HookPriority = .Medium, perform action: () -> Void) -> Cancellable? {
         
         return self.onViewDidLoad(immediatelyIfAlreadyLoaded: true, priority: priority) { [weak self] _ in
             
             self?.view.on(hook, onceOnly: onceOnly) { [weak self] in
-                action(window: self?.view.window)
+                action()
             }
         }
     }
