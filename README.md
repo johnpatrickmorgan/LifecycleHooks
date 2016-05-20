@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/cocoapods/v/LifecycleHooks.svg?style=flat)](http://cocoapods.org/pods/LifecycleHooks)
 [![License](https://img.shields.io/cocoapods/l/LifecycleHooks.svg?style=flat)](http://cocoapods.org/pods/LifecycleHooks)
-[![Platform](https://img.shields.io/cocoapods/p/LifecycleHooks.svg?style=flat)](http://cocoapods.org/pods/LifecycleHooks)
+[![Swift](https://img.shields.io/badge/Swift-2.2-orange.svg)
 
 ##About
 
@@ -51,3 +51,17 @@ The following parameters allow for further customization of lifecycle hooks:
 - `onceOnly`: Whether the hook should be performed once only or every time the lifecyce event is triggered.
 - `priority`: If you add multiple hooks for a particular lifecycle event, they occur in priority order, (or in the order they were added if the priorities are the same).
 - Hooks can be cancelled at any time by calling `cancel()` on the returned object.
+
+## Installation
+
+LifecycleHooks is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'LifecycleHooks'
+```
+
+## License
+
+LifecycleHooks is available under the MIT license. See the LICENSE file for more info.
+
