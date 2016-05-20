@@ -59,7 +59,7 @@ class HookKVObserver<Observed: NSObject>: KeyValueObserver<Observed> {
 /// Convenience methods to make working with KeyValueObservers less verbose.
 extension NSObject {
     
-    func addKeyValueObserver<T>(observer: KeyValueObserver<T>, options: NSKeyValueObservingOptions = [], context: UnsafeMutablePointer<Void> = UnsafeMutablePointer<Void>()) {
+    func addKeyValueObserver<T>(observer: KeyValueObserver<T>, options: NSKeyValueObservingOptions = [], context: UnsafeMutablePointer<Void> = nil) {
         
         addObserver(observer, forKeyPath: observer.keyPath, options: options, context: context)
     }
