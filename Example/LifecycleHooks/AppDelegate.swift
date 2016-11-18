@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let firstTab = (window?.rootViewController as? UITabBarController)?.viewControllers?.first
         if let testViewController = firstTab as? LifecycleLoggingViewController {
@@ -24,26 +24,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Hooked viewDidLoad")
             }
             
-            testViewController.onView(.DidMoveToWindow) {
+            testViewController.onView(.didMoveToWindow) {
                 print("Hooked didMoveToWindow")
             }
             
-            testViewController.on(.ViewWillAppear) { _ in
+            testViewController.on(.viewWillAppear) { _ in
                 print("Hooked viewWillAppear")
             }
             
-            testViewController.on(.ViewDidAppear) { _ in
+            testViewController.on(.viewDidAppear) { _ in
                 print("Hooked viewDidAppear")
             }
             
-            testViewController.on(.ViewWillDisappear) { _ in
+            testViewController.on(.viewWillDisappear) { _ in
                 print("Hooked viewWillDisappear")
             }
             
-            testViewController.on(.ViewDidDisappear) { _ in
+            testViewController.on(.viewDidDisappear) { _ in
                 print("Hooked viewDidDisappear")
             }
-
+            
             print("All hooks added")
         }
         return true

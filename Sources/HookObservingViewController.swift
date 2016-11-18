@@ -22,37 +22,37 @@ class HookObservingViewController: UIViewController, HookObserver {
         view = InvisibleView()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
         
-        runHook(.ViewWillAppear, animated: animated)
+        runHook(.viewWillAppear, animated: animated)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated)
         
-        runHook(.ViewDidAppear, animated: animated)
+        runHook(.viewDidAppear, animated: animated)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         
         super.viewWillDisappear(animated)
         
-        runHook(.ViewWillDisappear, animated: animated)
+        runHook(.viewWillDisappear, animated: animated)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         
         super.viewDidDisappear(animated)
         
-        runHook(.ViewDidDisappear, animated: animated)
+        runHook(.viewDidDisappear, animated: animated)
     }
     
     //MARK: HookObserver
     
-    func add(action: Bool -> Void, hook: ViewControllerLifecycleHook, onceOnly: Bool, priority: HookPriority = .Medium) -> Cancellable {
+    func add(_ action: @escaping (Bool) -> Void, hook: ViewControllerLifecycleHook, onceOnly: Bool, priority: HookPriority = .medium) -> Cancellable {
         
         let lifecycleAction = LifecycleAction(performOnceOnly: onceOnly, priority: priority, action: action)
         
@@ -66,17 +66,17 @@ class HookObservingViewController: UIViewController, HookObserver {
         }
     }
     
-    func addViewDidLoadAction(observed: UIViewController, immediatelyIfAlreadyLoaded: Bool = true, priority: HookPriority = .Medium, perform action: (alreadyLoaded: Bool) -> Void) -> Cancellable? {
+    func addViewDidLoadAction(_ observed: UIViewController, immediatelyIfAlreadyLoaded: Bool = true, priority: HookPriority = .medium, perform action: @escaping (_ alreadyLoaded: Bool) -> Void) -> Cancellable? {
         
-        if observed.isViewLoaded() && immediatelyIfAlreadyLoaded {
-            action(alreadyLoaded: true)
+        if observed.isViewLoaded && immediatelyIfAlreadyLoaded {
+            action(true)
             return nil
         }
         
         let observer = HookKVObserver(object: observed, keyPath: "view", priority: priority)
         observer.observation = { [weak self] _, _, _ in
         
-            action(alreadyLoaded: false)
+            action(false)
             self?.kvoObservers.removeObject(observer)
         }
         
@@ -88,18 +88,18 @@ class HookObservingViewController: UIViewController, HookObserver {
         }
     }
     
-    func cancel(action: LifecycleAction<Bool>, hook: ViewControllerLifecycleHook) {
+    func cancel(_ action: LifecycleAction<Bool>, hook: ViewControllerLifecycleHook) {
         
-        if let actions = hooks[hook], index = (actions.indexOf { $0 === action }) {
-            hooks[hook]?.removeAtIndex(index)
+        if let actions = hooks[hook], let index = (actions.index { $0 === action }) {
+            hooks[hook]?.remove(at: index)
         }
     }
     
     //MARK: Private
     
-    private func runHook(hook: ViewControllerLifecycleHook, animated: Bool = false) {
+    fileprivate func runHook(_ hook: ViewControllerLifecycleHook, animated: Bool = false) {
         
-        precondition(parentViewController != nil)
+        precondition(parent != nil)
         
         for action in hooks[hook] ?? [] {
             

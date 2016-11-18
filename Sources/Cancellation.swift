@@ -19,7 +19,7 @@ struct Cancellation: Cancellable {
     
     var cancelAction: () -> Void
     
-    init(cancelAction: () -> Void) {
+    init(cancelAction: @escaping () -> Void) {
         
         self.cancelAction = cancelAction
     }

@@ -10,61 +10,66 @@ import Foundation
 
 
 // Source: http://airspeedvelocity.net/2016/01/10/writing-a-generic-stable-sort/
+// Swift 3 update: http://sketchytech.blogspot.co.uk/2016/03/swift-sticking-together-with.html
 // Enables stable sorting of arrays.
-extension RangeReplaceableCollectionType
+
+extension RangeReplaceableCollection
     where
-    Index: RandomAccessIndexType,
-    SubSequence.Generator.Element == Generator.Element,
-Index.Distance == Index.Stride {
+    Index: Strideable,
+    SubSequence.Iterator.Element == Iterator.Element,
+    IndexDistance == Index.Stride {
     
     public mutating func stableSortInPlace(
-        isOrderedBefore: (Generator.Element,Generator.Element)->Bool
+        isOrderedBefore: @escaping (Iterator.Element,Iterator.Element)->Bool
         ) {
-            let N = self.count
+        let N = self.count
+        
+        var aux: [Iterator.Element] = []
+        aux.reserveCapacity(numericCast(N))
+        
+        func merge(lo: Index, mid: Index, hi: Index) {
+            aux.removeAll(keepingCapacity: true)
             
-            var aux: [Generator.Element] = []
-            aux.reserveCapacity(numericCast(N))
-            
-            func merge(lo: Index, _ mid: Index, _ hi: Index) {
-                
-                aux.removeAll(keepCapacity: true)
-                
-                var i = lo, j = mid
-                while i < mid && j < hi {
-                    if isOrderedBefore(self[j],self[i]) {
-                        aux.append(self[j])
-                        j += 1
-                    }
-                    else {
-                        aux.append(self[i])
-                        i += 1
-                    }
+            var i = lo, j = mid
+            while i < mid && j < hi {
+                if isOrderedBefore(self[j],self[i]) {
+                    aux.append(self[j])
+                    j = (j as! Int + 1) as! Self.Index
                 }
-                aux.appendContentsOf(self[i..<mid])
-                aux.appendContentsOf(self[j..<hi])
-                self.replaceRange(lo..<hi, with: aux)
-            }
-            
-            var sz: Index.Distance = 1
-            while sz < N {
-                for lo in startIndex.stride(to: endIndex-sz, by: sz*2) {
-                    merge(lo, lo+sz, lo.advancedBy(sz*2,limit: endIndex))
+                else {
+                    aux.append(self[i])
+                    i = (i as! Int + 1) as! Self.Index
                 }
-                sz *= 2
             }
+            aux.append(contentsOf:self[i..<mid])
+            aux.append(contentsOf:self[j..<hi])
+            self.replaceSubrange(lo..<hi, with: aux)
+        }
+        
+        var sz: IndexDistance = 1
+        while sz < N {
+            for lo in stride(from:startIndex, to: endIndex-sz, by: sz*2) {
+                
+                if let hiVal = self.index(lo, offsetBy:sz*2, limitedBy: endIndex) {
+                    merge(lo:lo, mid: lo+sz, hi:hiVal)
+                }
+                
+            }
+            sz *= 2
+        }
     }
 }
 
 // A less verbose way to remove objects from arrays by reference.
 extension Array where Element: AnyObject {
     
-    mutating func removeObject(object: Element) {
+    mutating func removeObject(_ object: Element) {
         
-        let index = indexOf { $0 === object }
+        let index = self.index { $0 === object }
         
         guard let foundIndex = index else {
             return
         }
-        removeAtIndex(foundIndex)
+        remove(at: foundIndex)
     }
 }

@@ -12,33 +12,33 @@ public protocol LifecycleHooking {
     associatedtype Hook
     associatedtype Action
     
-    func on(hook: Hook, onceOnly: Bool, priority: HookPriority, perform: Action) -> Cancellable?
+    func on(_ hook: Hook, onceOnly: Bool, priority: HookPriority, perform: Action) -> Cancellable?
 }
 
 /// Hooks are performed in order of HookPriority.
 public enum HookPriority {
     
-    case Highest
-    case High
-    case Medium
-    case Low
-    case Lowest
+    case highest
+    case high
+    case medium
+    case low
+    case lowest
     
-    case Custom(Int)
+    case custom(Int)
     
     public var value: Int {
         switch self {
-        case Highest:
+        case .highest:
             return 1000
-        case High:
+        case .high:
             return 750
-        case Medium:
+        case .medium:
             return 500
-        case Low:
+        case .low:
             return 250
-        case Lowest:
+        case .lowest:
             return 0
-        case .Custom(let priority):
+        case .custom(let priority):
             return min(max(priority, 0), 1000)
         }
     }

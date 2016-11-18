@@ -14,5 +14,5 @@ protocol HookObserver {
     associatedtype Hook
     associatedtype Context
     
-    func add(action: Context -> Void, hook: Hook, onceOnly: Bool, priority: HookPriority) -> Cancellable
+    func add(_ action: @escaping (Context) -> Void, hook: Hook, onceOnly: Bool, priority: HookPriority) -> Cancellable
 }

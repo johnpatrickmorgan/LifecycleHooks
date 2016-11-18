@@ -11,23 +11,23 @@ import UIKit
 /// A view that will never be visible.
 class InvisibleView: UIView {
     
-    override var hidden: Bool {
+    override var isHidden: Bool {
         get {
-            return super.hidden
+            return super.isHidden
         }
         set {
             precondition(newValue == true)
-            super.hidden = newValue
+            super.isHidden = newValue
         }
     }
     
-    override var userInteractionEnabled: Bool {
+    override var isUserInteractionEnabled: Bool {
         get {
-            return super.hidden
+            return super.isHidden
         }
         set {
             precondition(newValue == false)
-            super.hidden = newValue
+            super.isHidden = newValue
         }
     }
 
@@ -47,7 +47,7 @@ class InvisibleView: UIView {
     
     func hide() {
         
-        hidden = true
-        userInteractionEnabled = false
+        isHidden = true
+        isUserInteractionEnabled = false
     }
 }

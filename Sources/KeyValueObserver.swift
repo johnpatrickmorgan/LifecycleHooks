@@ -11,7 +11,7 @@ import Foundation
 /// A simple closure-based key-value observation helper.
 class KeyValueObserver<Observed: NSObject>: NSObject {
     
-    typealias Observation = (object: Observed, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) -> Void
+    typealias Observation = (_ object: Observed, _ change: [NSKeyValueChangeKey : Any]?, _ context: UnsafeMutableRawPointer?) -> Void
     
     var observation: Observation?
     var keyPath: String
@@ -28,13 +28,13 @@ class KeyValueObserver<Observed: NSObject>: NSObject {
         object.addKeyValueObserver(self)
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
-        guard let keyPath = keyPath where keyPath == self.keyPath else { return }
+        guard let keyPath = keyPath , keyPath == self.keyPath else { return }
         
         guard let observedObject = object as? Observed else { return }
         
-        observation?(object: observedObject, change: change, context: context)
+        observation?(observedObject, change, context)
     }
 
     deinit {
@@ -48,7 +48,7 @@ class HookKVObserver<Observed: NSObject>: KeyValueObserver<Observed> {
 
     var priority: HookPriority
     
-    init(object: Observed, keyPath: String, priority: HookPriority = .Medium, observation: Observation? = nil) {
+    init(object: Observed, keyPath: String, priority: HookPriority = .medium, observation: Observation? = nil) {
         
         self.priority = priority
         
@@ -59,12 +59,12 @@ class HookKVObserver<Observed: NSObject>: KeyValueObserver<Observed> {
 /// Convenience methods to make working with KeyValueObservers less verbose.
 extension NSObject {
     
-    func addKeyValueObserver<T>(observer: KeyValueObserver<T>, options: NSKeyValueObservingOptions = [], context: UnsafeMutablePointer<Void> = nil) {
+    func addKeyValueObserver<T>(_ observer: KeyValueObserver<T>, options: NSKeyValueObservingOptions = [], context: UnsafeMutableRawPointer? = nil) {
         
         addObserver(observer, forKeyPath: observer.keyPath, options: options, context: context)
     }
     
-    func removeKeyValueObserver<T>(observer: KeyValueObserver<T>) {
+    func removeKeyValueObserver<T>(_ observer: KeyValueObserver<T>) {
         
         removeObserver(observer, forKeyPath: observer.keyPath)
     }

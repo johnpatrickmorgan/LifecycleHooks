@@ -9,15 +9,15 @@
 import Foundation
 
 /// Captures data related to an action to be performed after a particular Lifecycle event.
-class LifecycleAction<T> {
+class LifecycleAction<Args> {
     
     var performOnceOnly: Bool
     
-    var perform: T -> Void
+    var perform: (Args) -> Void
     
     var priority: Int
     
-    init(performOnceOnly: Bool = false, priority: HookPriority, action: T -> Void) {
+    init(performOnceOnly: Bool = false, priority: HookPriority, action: @escaping (Args) -> Void) {
         
         self.performOnceOnly = performOnceOnly
         self.priority = priority.value

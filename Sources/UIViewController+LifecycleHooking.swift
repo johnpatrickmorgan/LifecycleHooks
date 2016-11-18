@@ -18,10 +18,10 @@ import Foundation
  */
 public enum ViewControllerLifecycleHook {
     
-    case ViewWillAppear
-    case ViewDidAppear
-    case ViewWillDisappear
-    case ViewDidDisappear
+    case viewWillAppear
+    case viewDidAppear
+    case viewWillDisappear
+    case viewDidDisappear
 }
 
 extension UIViewController: LifecycleHooking {
@@ -35,9 +35,9 @@ extension UIViewController: LifecycleHooking {
         let observer = HookObservingViewController()
         addChildViewController(observer)
         
-        self.onViewDidLoad(immediatelyIfAlreadyLoaded: true, priority: .Highest) { [weak self] _ in
-            self?.view.insertSubview(self!.hookObserver.view, atIndex: 0)
-            self?.hookObserver.didMoveToParentViewController(self)
+        self.onViewDidLoad(immediatelyIfAlreadyLoaded: true, priority: .highest) { [weak self] _ in
+            self?.view.insertSubview(self!.hookObserver.view, at: 0)
+            self?.hookObserver.didMove(toParentViewController: self)
         }
 
         return observer
@@ -52,7 +52,7 @@ extension UIViewController: LifecycleHooking {
      
      - returns: A cancellable object, on which `cancel()` can be called.
      */
-    public func onViewDidLoad(immediatelyIfAlreadyLoaded immediately: Bool = false, priority: HookPriority = .Medium, perform action: (alreadyLoaded: Bool) -> Void) -> Cancellable? {
+    @discardableResult public func onViewDidLoad(immediatelyIfAlreadyLoaded immediately: Bool = false, priority: HookPriority = .medium, perform action: @escaping (_ alreadyLoaded: Bool) -> Void) -> Cancellable? {
         
         return hookObserver.addViewDidLoadAction(self, immediatelyIfAlreadyLoaded: immediately, perform: action)
     }
@@ -77,7 +77,7 @@ extension UIViewController: LifecycleHooking {
      
      - returns: A cancellable object, on which `cancel()` can be called.
      */
-    public func onView(hook: ViewLifecycleHook, onceOnly: Bool = false, priority: HookPriority = .Medium, perform action: () -> Void) -> Cancellable? {
+    @discardableResult public func onView(_ hook: ViewLifecycleHook, onceOnly: Bool = false, priority: HookPriority = .medium, perform action: @escaping () -> Void) -> Cancellable? {
         
         return self.onViewDidLoad(immediatelyIfAlreadyLoaded: true, priority: priority) { [weak self] _ in
             
@@ -97,7 +97,7 @@ extension UIViewController: LifecycleHooking {
      
      - returns: A cancellable object, on which `cancel()` can be called.
      */
-    public func on(hook: ViewControllerLifecycleHook, onceOnly: Bool = false, priority: HookPriority = .Medium, perform action: Bool -> Void) -> Cancellable? {
+    @discardableResult public func on(_ hook: ViewControllerLifecycleHook, onceOnly: Bool = false, priority: HookPriority = .medium, perform action: @escaping (Bool) -> Void) -> Cancellable? {
 
         return hookObserver.add(action, hook: hook, onceOnly: onceOnly, priority: priority)
     }

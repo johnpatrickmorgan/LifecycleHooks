@@ -21,12 +21,12 @@ class HookObservingView: InvisibleView, HookObserver {
         
         super.didMoveToWindow()
         
-        runHook(.DidMoveToWindow)
+        runHook(.didMoveToWindow)
     }
     
     //MARK: HookObserver
     
-    func add(action: () -> Void, hook: ViewLifecycleHook, onceOnly: Bool, priority: HookPriority = .Medium) -> Cancellable {
+    func add(_ action: @escaping () -> Void, hook: ViewLifecycleHook, onceOnly: Bool, priority: HookPriority = .medium) -> Cancellable {
         
         let lifecycleAction = LifecycleAction(performOnceOnly: onceOnly, priority: priority, action: action)
         
@@ -40,16 +40,16 @@ class HookObservingView: InvisibleView, HookObserver {
         }
     }
     
-    func cancel(action: LifecycleAction<Void>, hook: ViewLifecycleHook) {
+    func cancel(_ action: LifecycleAction<Void>, hook: ViewLifecycleHook) {
         
-        if let actions = hooks[hook], index = (actions.indexOf { $0 === action }) {
-            hooks[hook]?.removeAtIndex(index)
+        if let actions = hooks[hook], let index = (actions.index { $0 === action }) {
+            hooks[hook]?.remove(at: index)
         }
     }
     
     //MARK: Private
     
-    private func runHook(hook: ViewLifecycleHook) {
+    fileprivate func runHook(_ hook: ViewLifecycleHook) {
         
         precondition(superview != nil)
         
