@@ -1,14 +1,16 @@
 PODS:
-  - LifecycleHooks (0.1.0)
+  - LifecycleHooks (0.2.0)
 
 DEPENDENCIES:
   - LifecycleHooks (from `../`)
 
 EXTERNAL SOURCES:
   LifecycleHooks:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  LifecycleHooks: 060d9b71b63b91529c485fcb41df023cc70193fc
+  LifecycleHooks: e1ae1ace7aae64b85acc291e24977b9f6066f9aa
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: b1b75afb7258df16b52b09d41e8d019965e61b4f
+
+COCOAPODS: 1.1.1
