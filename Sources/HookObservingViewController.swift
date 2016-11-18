@@ -52,7 +52,7 @@ class HookObservingViewController: UIViewController, HookObserver {
     
     //MARK: HookObserver
     
-    func add(_ action: @escaping (Bool) -> Void, hook: ViewControllerLifecycleHook, onceOnly: Bool, priority: HookPriority = .medium) -> Cancellable {
+    @discardableResult func add(_ action: @escaping (Bool) -> Void, hook: ViewControllerLifecycleHook, onceOnly: Bool, priority: HookPriority = .medium) -> Cancellable {
         
         let lifecycleAction = LifecycleAction(performOnceOnly: onceOnly, priority: priority, action: action)
         
@@ -66,7 +66,7 @@ class HookObservingViewController: UIViewController, HookObserver {
         }
     }
     
-    func addViewDidLoadAction(_ observed: UIViewController, immediatelyIfAlreadyLoaded: Bool = true, priority: HookPriority = .medium, perform action: @escaping (_ alreadyLoaded: Bool) -> Void) -> Cancellable? {
+    @discardableResult func addViewDidLoadAction(_ observed: UIViewController, immediatelyIfAlreadyLoaded: Bool = true, priority: HookPriority = .medium, perform action: @escaping (_ alreadyLoaded: Bool) -> Void) -> Cancellable? {
         
         if observed.isViewLoaded && immediatelyIfAlreadyLoaded {
             action(true)

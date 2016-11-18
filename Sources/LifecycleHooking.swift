@@ -12,7 +12,7 @@ public protocol LifecycleHooking {
     associatedtype Hook
     associatedtype Action
     
-    func on(_ hook: Hook, onceOnly: Bool, priority: HookPriority, perform: Action) -> Cancellable?
+    @discardableResult func on(_ hook: Hook, onceOnly: Bool, priority: HookPriority, perform: Action) -> Cancellable?
 }
 
 /// Hooks are performed in order of HookPriority.
