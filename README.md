@@ -8,8 +8,8 @@
 
 LifecycleHooks allows custom code to be injected into views and view controllers in response to lifecycle events, e.g.,
 
-	viewController.on(.ViewDidAppear) { animated in
-		print("View did appear, animated: \(animated)")
+	viewController.on(.viewDidAppear) { animated in
+		print("View did appear", animated)
 	}
 
 The following lifecycle events are supported:
@@ -48,7 +48,7 @@ In most circumstances subclassing is sufficient to add lifecycle-dependent code 
 
 The following parameters allow for further customization of lifecycle hooks:
 
-- `onceOnly`: Whether the hook should be performed once only or every time the lifecyce event is triggered.
+- `onceOnly`: Whether the hook should be performed once only or every time the lifecycle event is triggered.
 - `priority`: If you add multiple hooks for a particular lifecycle event, they occur in priority order, (or in the order they were added if the priorities are the same).
 - Hooks can be cancelled at any time by calling `cancel()` on the returned object.
 
