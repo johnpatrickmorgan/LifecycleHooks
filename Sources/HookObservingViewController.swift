@@ -74,7 +74,8 @@ class HookObservingViewController: UIViewController, HookObserver {
         }
         
         let observer = HookKVObserver(object: observed, keyPath: "view", priority: priority)
-        observer.observation = { [weak self] _, _, _ in
+        observer.observation = { [weak self, weak observer] _, _, _ in
+            guard let observer = observer else { return }
         
             action(false)
             self?.kvoObservers.removeObject(observer)
@@ -83,7 +84,9 @@ class HookObservingViewController: UIViewController, HookObserver {
         kvoObservers.append(observer)
         kvoObservers.stableSortInPlace { $0.priority.value > $1.priority.value }
         
-        return Cancellation { [weak self] in
+        return Cancellation { [weak self, weak observer] in
+            guard let observer = observer else { return }
+            
             self?.kvoObservers.removeObject(observer)
         }
     }
