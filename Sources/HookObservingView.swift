@@ -26,7 +26,7 @@ class HookObservingView: InvisibleView, HookObserver {
     
     //MARK: HookObserver
     
-    func add(_ action: @escaping () -> Void, hook: ViewLifecycleHook, onceOnly: Bool, priority: HookPriority = .medium) -> Cancellable {
+    func add(_ action: @escaping (()) -> Void, hook: ViewLifecycleHook, onceOnly: Bool, priority: HookPriority = .medium) -> Cancellable {
         
         let lifecycleAction = LifecycleAction(performOnceOnly: onceOnly, priority: priority, action: action)
         
@@ -55,7 +55,7 @@ class HookObservingView: InvisibleView, HookObserver {
         
         for action in hooks[hook] ?? [] {
             
-            action.perform()
+            action.perform(())
             
             if action.performOnceOnly {
                 cancel(action, hook: hook)

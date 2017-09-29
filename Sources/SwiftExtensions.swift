@@ -16,7 +16,6 @@ import Foundation
 extension RangeReplaceableCollection
     where
     Index: Strideable,
-    SubSequence.Iterator.Element == Iterator.Element,
     IndexDistance == Index.Stride {
     
     public mutating func stableSortInPlace(
@@ -48,10 +47,12 @@ extension RangeReplaceableCollection
         
         var sz: IndexDistance = 1
         while sz < N {
-            for lo in stride(from:startIndex, to: endIndex-sz, by: sz*2) {
+            let limit = index(endIndex, offsetBy: -sz)
+            for lo in stride(from:startIndex, to: limit, by: sz*2) {
                 
-                if let hiVal = self.index(lo, offsetBy:sz*2, limitedBy: endIndex) {
-                    merge(lo:lo, mid: lo+sz, hi:hiVal)
+                if let hi = index(lo, offsetBy:sz*2, limitedBy: endIndex) {
+                    let mid = index(lo, offsetBy: sz)
+                    merge(lo:lo, mid: mid, hi:hi)
                 }
                 
             }
