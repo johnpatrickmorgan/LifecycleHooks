@@ -54,11 +54,21 @@ The following parameters allow for further customization of lifecycle hooks:
 
 ## Installation
 
+### CocoaPods
+
 LifecycleHooks is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'LifecycleHooks'
+```
+
+### Carthage
+
+Add the following to your Cartfile:
+
+```
+github "johnpatrickmorgan/LifecycleHooks"
 ```
 
 ## License
