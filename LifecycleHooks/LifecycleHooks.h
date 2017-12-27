@@ -2,8 +2,7 @@
 //  LifecycleHooks.h
 //  LifecycleHooks
 //
-//  Created by J. B. Whiteley on 11/19/17.
-//  Copyright © 2017 SwiftBit. All rights reserved.
+//  Created by Bart Whiteley on 11/19/17.
 //
 
 #import <UIKit/UIKit.h>
