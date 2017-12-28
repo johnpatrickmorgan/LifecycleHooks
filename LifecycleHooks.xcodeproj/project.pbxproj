@@ -132,7 +132,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = SwiftBit;
+				ORGANIZATIONNAME = "John Morgan";
 				TargetAttributes = {
 					71CEEF361FC29C49000B8EE6 = {
 						CreatedOnToolsVersion = 9.2;
@@ -316,7 +316,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-bit.LifecycleHooks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.johnpatrickmorgan.LifecycleHooks";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -338,7 +338,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-bit.LifecycleHooks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.johnpatrickmorgan.LifecycleHooks";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
