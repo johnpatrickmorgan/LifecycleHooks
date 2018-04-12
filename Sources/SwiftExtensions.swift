@@ -9,14 +9,11 @@
 import Foundation
 
 
-// Source: http://airspeedvelocity.net/2016/01/10/writing-a-generic-stable-sort/
-// Swift 3 update: http://sketchytech.blogspot.co.uk/2016/03/swift-sticking-together-with.html
+// Adapted from http://airspeedvelocity.net/2016/01/10/writing-a-generic-stable-sort/
+// and http://sketchytech.blogspot.co.uk/2016/03/swift-sticking-together-with.html
 // Enables stable sorting of arrays.
 
-extension RangeReplaceableCollection
-    where
-    Index: Strideable,
-    IndexDistance == Index.Stride {
+extension RangeReplaceableCollection where Index == Int {
     
     public mutating func stableSortInPlace(
         isOrderedBefore: @escaping (Iterator.Element,Iterator.Element)->Bool
@@ -33,11 +30,11 @@ extension RangeReplaceableCollection
             while i < mid && j < hi {
                 if isOrderedBefore(self[j],self[i]) {
                     aux.append(self[j])
-                    j = (j as! Int + 1) as! Self.Index
+                    j = j + 1
                 }
                 else {
                     aux.append(self[i])
-                    i = (i as! Int + 1) as! Self.Index
+                    i = i + 1
                 }
             }
             aux.append(contentsOf:self[i..<mid])
@@ -45,7 +42,7 @@ extension RangeReplaceableCollection
             self.replaceSubrange(lo..<hi, with: aux)
         }
         
-        var sz: IndexDistance = 1
+        var sz = 1
         while sz < N {
             let limit = index(endIndex, offsetBy: -sz)
             for lo in stride(from:startIndex, to: limit, by: sz*2) {

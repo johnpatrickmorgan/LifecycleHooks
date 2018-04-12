@@ -28,9 +28,8 @@ extension UIViewController: LifecycleHooking {
     
     var hookObserver: HookObservingViewController  {
         
-        if let observer = (childViewControllers.flatMap { $0 as? HookObservingViewController
-            }.first) {
-                return observer
+        if let observer = (childViewControllers.lazy.compactMap { $0 as? HookObservingViewController }.first) {
+            return observer
         }
         let observer = HookObservingViewController()
         addChildViewController(observer)

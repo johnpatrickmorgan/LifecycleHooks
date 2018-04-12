@@ -22,7 +22,7 @@ extension UIView: LifecycleHooking {
     
     var hookObserver: HookObservingView  {
         
-        if let observer = (subviews.flatMap { $0 as? HookObservingView }.first) {
+        if let observer = (subviews.lazy.compactMap { $0 as? HookObservingView }.first) {
             return observer
         }
         let observer = HookObservingView()
