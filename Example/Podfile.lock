@@ -6,11 +6,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   LifecycleHooks:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   LifecycleHooks: 8fcdd488fcb8376e64a59a31cd681276ec1a312a
 
 PODFILE CHECKSUM: f20f94bd6b5cc7c1f0af3c7d41253f59e3f2f624
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.0.beta.1

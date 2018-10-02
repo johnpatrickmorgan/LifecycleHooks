@@ -28,15 +28,15 @@ extension UIViewController: LifecycleHooking {
     
     var hookObserver: HookObservingViewController  {
         
-        if let observer = (childViewControllers.lazy.compactMap { $0 as? HookObservingViewController }.first) {
+        if let observer = (children.lazy.compactMap { $0 as? HookObservingViewController }.first) {
             return observer
         }
         let observer = HookObservingViewController()
-        addChildViewController(observer)
+        addChild(observer)
         
         self.onViewDidLoad(immediatelyIfAlreadyLoaded: true, priority: .highest) { [weak self] _ in
             self?.view.insertSubview(self!.hookObserver.view, at: 0)
-            self?.hookObserver.didMove(toParentViewController: self)
+            self?.hookObserver.didMove(toParent: self)
         }
 
         return observer
