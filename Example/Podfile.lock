@@ -1,5 +1,5 @@
 PODS:
-  - LifecycleHooks (0.4.2)
+  - LifecycleHooks (0.5.0)
 
 DEPENDENCIES:
   - LifecycleHooks (from `../`)
