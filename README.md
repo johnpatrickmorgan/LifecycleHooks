@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/cocoapods/v/LifecycleHooks.svg?style=flat)](http://cocoapods.org/pods/LifecycleHooks)
 [![License](https://img.shields.io/cocoapods/l/LifecycleHooks.svg?style=flat)](http://cocoapods.org/pods/LifecycleHooks)
-![Swift](https://img.shields.io/badge/Swift-4.1-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
 
 ## About
 
@@ -16,7 +16,7 @@ The following lifecycle events are supported:
 
 - `UIViewController` lifecycle hooks:
 
-    - `viewDidLoad` 
+    - `viewDidLoad`
     - `viewWillAppear`
     - `viewDidAppear`
     - `viewWillDisappear`
@@ -26,11 +26,11 @@ The following lifecycle events are supported:
 
     - `didMoveToWindow`
 
-NOTE: Actions are run *after* the object's own implementation of the respective methods, with the exception of `viewDidLoad`, for which actions are run *before* the view controller's own `viewDidLoad` implementation. 
+NOTE: Actions are run *after* the object's own implementation of the respective methods, with the exception of `viewDidLoad`, for which actions are run *before* the view controller's own `viewDidLoad` implementation.
 
 ## How does it work?
 
-Lifecycle events are automatically passed on to a view controller's children (and a view's subviews). By adding an invisible view / view controller into the hierarchy, the custom code can be executed at appropriate points. This was inspired by [this post](http://khanlou.com/2016/02/many-controllers/) by Soroush Khanlou. 
+Lifecycle events are automatically passed on to a view controller's children (and a view's subviews). By adding an invisible view / view controller into the hierarchy, the custom code can be executed at appropriate points. This was inspired by [this post](http://khanlou.com/2016/02/many-controllers/) by Soroush Khanlou.
 
 The approach has been refined to avoid forcing the target view controller's view to be loaded prematurely when the hook is added. This is achieved by using KVO to monitor when the view loads. This is how the `viewDidLoad` hook is implemented, and explains why that particular hook is run *before* `viewDidLoad` is called.
 
