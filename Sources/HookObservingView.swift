@@ -42,7 +42,7 @@ class HookObservingView: InvisibleView, HookObserver {
     
     func cancel(_ action: LifecycleAction<Void>, hook: ViewLifecycleHook) {
         
-        if let actions = hooks[hook], let index = (actions.index { $0 === action }) {
+        if let actions = hooks[hook], let index = (actions.firstIndex { $0 === action }) {
             hooks[hook]?.remove(at: index)
         }
     }

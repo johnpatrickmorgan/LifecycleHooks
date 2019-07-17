@@ -93,7 +93,7 @@ class HookObservingViewController: UIViewController, HookObserver {
     
     func cancel(_ action: LifecycleAction<Bool>, hook: ViewControllerLifecycleHook) {
         
-        if let actions = hooks[hook], let index = (actions.index { $0 === action }) {
+        if let actions = hooks[hook], let index = (actions.firstIndex { $0 === action }) {
             hooks[hook]?.remove(at: index)
         }
     }

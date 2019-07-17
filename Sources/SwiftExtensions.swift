@@ -63,7 +63,7 @@ extension Array where Element: AnyObject {
     
     mutating func removeObject(_ object: Element) {
         
-        let index = self.index { $0 === object }
+        let index = self.firstIndex { $0 === object }
         
         guard let foundIndex = index else {
             return
