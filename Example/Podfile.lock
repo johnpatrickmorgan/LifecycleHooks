@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LifecycleHooks: 8fcdd488fcb8376e64a59a31cd681276ec1a312a
+  LifecycleHooks: 9aede4fd0bd1e9f966f680f23df5eabf8d7dda1f
 
 PODFILE CHECKSUM: f20f94bd6b5cc7c1f0af3c7d41253f59e3f2f624
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.1
