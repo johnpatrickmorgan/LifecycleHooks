@@ -33,7 +33,7 @@
 		9599D43B2C10E9D889D4D5AA /* Pods-LifecycleHooks_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifecycleHooks_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LifecycleHooks_Example/Pods-LifecycleHooks_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		979108655EB8A1D9B82ABCF3 /* Pods_LifecycleHooks_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifecycleHooks_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8D00ADABEFE9815D90B43F /* Pods_LifecycleHooks_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifecycleHooks_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E285E91AB476463A2A15E04E /* LifecycleHooks.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LifecycleHooks.podspec; path = ../LifecycleHooks.podspec; sourceTree = "<group>"; };
+		E285E91AB476463A2A15E04E /* LifecycleHooks.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LifecycleHooks.podspec; path = ../LifecycleHooks.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
