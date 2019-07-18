@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name             = "LifecycleHooks"
-  s.version          = "0.5.0"
+  s.version          = "0.6.0"
   s.summary          = "Inject custom code into views and view controllers in response to lifecycle events."
 
   s.description      = <<-DESC
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
   s.source_files = 'Sources/**/*'
 
