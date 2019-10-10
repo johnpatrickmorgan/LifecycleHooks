@@ -56,8 +56,7 @@ The following parameters allow for further customization of lifecycle hooks:
 
 ### CocoaPods
 
-LifecycleHooks is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+LifecycleHooks is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'LifecycleHooks'
@@ -70,6 +69,18 @@ Add the following to your Cartfile:
 ```
 github "johnpatrickmorgan/LifecycleHooks"
 ```
+
+### Swift Package Manager
+
+Adding the following to the `dependencies` array of your `Package.swift`:
+
+```
+dependencies: [
+    .package(url: "https://github.com/johnpatrickmorgan/LifecycleHooks.git", from: "0.6.1")
+]
+```
+
+### 
 
 ## License
 
