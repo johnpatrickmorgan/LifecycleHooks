@@ -6,6 +6,7 @@
 //
 //
 
+import Foundation
 import UIKit
 
 /// A view that will never be visible.

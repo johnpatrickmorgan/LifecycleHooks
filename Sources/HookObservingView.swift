@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Can be configured to run actions in response to view lifecycle events.
 class HookObservingView: InvisibleView, HookObserver {

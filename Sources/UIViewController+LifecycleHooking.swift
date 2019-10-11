@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /**
  UIViewController lifecycle events which can be hooked into.
