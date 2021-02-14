@@ -1,502 +1,355 @@
 // !$*UTF8*$!
 {
-   archiveVersion = "1";
-   objectVersion = "46";
-   objects = {
-      "LifecycleHooks::LifecycleHooks" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_28";
-         buildPhases = (
-            "OBJ_31",
-            "OBJ_43"
-         );
-         dependencies = (
-         );
-         name = "LifecycleHooks";
-         productName = "LifecycleHooks";
-         productReference = "LifecycleHooks::LifecycleHooks::Product";
-         productType = "com.apple.product-type.framework";
-      };
-      "LifecycleHooks::LifecycleHooks::Product" = {
-         isa = "PBXFileReference";
-         path = "LifecycleHooks.framework";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "LifecycleHooks::SwiftPMPackageDescription" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_45";
-         buildPhases = (
-            "OBJ_48"
-         );
-         dependencies = (
-         );
-         name = "LifecycleHooksPackageDescription";
-         productName = "LifecycleHooksPackageDescription";
-         productType = "com.apple.product-type.framework";
-      };
-      "OBJ_1" = {
-         isa = "PBXProject";
-         attributes = {
-            LastSwiftMigration = "9999";
-            LastUpgradeCheck = "9999";
-         };
-         buildConfigurationList = "OBJ_2";
-         compatibilityVersion = "Xcode 3.2";
-         developmentRegion = "en";
-         hasScannedForEncodings = "0";
-         knownRegions = (
-            "en"
-         );
-         mainGroup = "OBJ_5";
-         productRefGroup = "OBJ_20";
-         projectDirPath = ".";
-         targets = (
-            "LifecycleHooks::LifecycleHooks",
-            "LifecycleHooks::SwiftPMPackageDescription"
-         );
-      };
-      "OBJ_10" = {
-         isa = "PBXFileReference";
-         path = "HookObserver.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_11" = {
-         isa = "PBXFileReference";
-         path = "HookObservingView.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_12" = {
-         isa = "PBXFileReference";
-         path = "HookObservingViewController.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_13" = {
-         isa = "PBXFileReference";
-         path = "InvisibleView.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_14" = {
-         isa = "PBXFileReference";
-         path = "KeyValueObserver.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_15" = {
-         isa = "PBXFileReference";
-         path = "LifecycleHooking.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_16" = {
-         isa = "PBXFileReference";
-         path = "SwiftExtensions.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_17" = {
-         isa = "PBXFileReference";
-         path = "UIView+LifecycleHooking.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_18" = {
-         isa = "PBXFileReference";
-         path = "UIViewController+LifecycleHooking.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_19" = {
-         isa = "PBXGroup";
-         children = (
-         );
-         name = "Tests";
-         path = "";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_2" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_3",
-            "OBJ_4"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_20" = {
-         isa = "PBXGroup";
-         children = (
-            "LifecycleHooks::LifecycleHooks::Product"
-         );
-         name = "Products";
-         path = "";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "OBJ_22" = {
-         isa = "PBXFileReference";
-         path = "LifecycleHooks";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_23" = {
-         isa = "PBXFileReference";
-         path = "Example";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_24" = {
-         isa = "PBXFileReference";
-         path = "LICENSE";
-         sourceTree = "<group>";
-      };
-      "OBJ_25" = {
-         isa = "PBXFileReference";
-         path = "LifecycleHooks.podspec";
-         sourceTree = "<group>";
-      };
-      "OBJ_26" = {
-         isa = "PBXFileReference";
-         path = "README.md";
-         sourceTree = "<group>";
-      };
-      "OBJ_28" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_29",
-            "OBJ_30"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_29" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "LifecycleHooks.xcodeproj/LifecycleHooks_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "8.0";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "LifecycleHooks";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "5.0";
-            TARGET_NAME = "LifecycleHooks";
-            TVOS_DEPLOYMENT_TARGET = "9.0";
-            WATCHOS_DEPLOYMENT_TARGET = "2.0";
-         };
-         name = "Debug";
-      };
-      "OBJ_3" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_OBJC_ARC = "YES";
-            COMBINE_HIDPI_IMAGES = "YES";
-            COPY_PHASE_STRIP = "NO";
-            DEBUG_INFORMATION_FORMAT = "dwarf";
-            DYLIB_INSTALL_NAME_BASE = "@rpath";
-            ENABLE_NS_ASSERTIONS = "YES";
-            GCC_OPTIMIZATION_LEVEL = "0";
-            GCC_PREPROCESSOR_DEFINITIONS = (
-               "$(inherited)",
-               "SWIFT_PACKAGE=1",
-               "DEBUG=1"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            ONLY_ACTIVE_ARCH = "YES";
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
-               "-DXcode"
-            );
-            PRODUCT_NAME = "$(TARGET_NAME)";
-            SDKROOT = "macosx";
-            SUPPORTED_PLATFORMS = (
-               "macosx",
-               "iphoneos",
-               "iphonesimulator",
-               "appletvos",
-               "appletvsimulator",
-               "watchos",
-               "watchsimulator"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)",
-               "SWIFT_PACKAGE",
-               "DEBUG"
-            );
-            SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-            USE_HEADERMAP = "NO";
-         };
-         name = "Debug";
-      };
-      "OBJ_30" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "LifecycleHooks.xcodeproj/LifecycleHooks_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "8.0";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "LifecycleHooks";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "5.0";
-            TARGET_NAME = "LifecycleHooks";
-            TVOS_DEPLOYMENT_TARGET = "9.0";
-            WATCHOS_DEPLOYMENT_TARGET = "2.0";
-         };
-         name = "Release";
-      };
-      "OBJ_31" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_32",
-            "OBJ_33",
-            "OBJ_34",
-            "OBJ_35",
-            "OBJ_36",
-            "OBJ_37",
-            "OBJ_38",
-            "OBJ_39",
-            "OBJ_40",
-            "OBJ_41",
-            "OBJ_42"
-         );
-      };
-      "OBJ_32" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_8";
-      };
-      "OBJ_33" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_9";
-      };
-      "OBJ_34" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_10";
-      };
-      "OBJ_35" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_11";
-      };
-      "OBJ_36" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_12";
-      };
-      "OBJ_37" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_13";
-      };
-      "OBJ_38" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_14";
-      };
-      "OBJ_39" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_15";
-      };
-      "OBJ_4" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_OBJC_ARC = "YES";
-            COMBINE_HIDPI_IMAGES = "YES";
-            COPY_PHASE_STRIP = "YES";
-            DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-            DYLIB_INSTALL_NAME_BASE = "@rpath";
-            GCC_OPTIMIZATION_LEVEL = "s";
-            GCC_PREPROCESSOR_DEFINITIONS = (
-               "$(inherited)",
-               "SWIFT_PACKAGE=1"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
-               "-DXcode"
-            );
-            PRODUCT_NAME = "$(TARGET_NAME)";
-            SDKROOT = "macosx";
-            SUPPORTED_PLATFORMS = (
-               "macosx",
-               "iphoneos",
-               "iphonesimulator",
-               "appletvos",
-               "appletvsimulator",
-               "watchos",
-               "watchsimulator"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)",
-               "SWIFT_PACKAGE"
-            );
-            SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-            USE_HEADERMAP = "NO";
-         };
-         name = "Release";
-      };
-      "OBJ_40" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_16";
-      };
-      "OBJ_41" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_17";
-      };
-      "OBJ_42" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_18";
-      };
-      "OBJ_43" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-         );
-      };
-      "OBJ_45" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_46",
-            "OBJ_47"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_46" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "5",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk",
-               "-package-description-version",
-               "5"
-            );
-            SWIFT_VERSION = "5.0";
-         };
-         name = "Debug";
-      };
-      "OBJ_47" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "5",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk",
-               "-package-description-version",
-               "5"
-            );
-            SWIFT_VERSION = "5.0";
-         };
-         name = "Release";
-      };
-      "OBJ_48" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_49"
-         );
-      };
-      "OBJ_49" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_6";
-      };
-      "OBJ_5" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_6",
-            "OBJ_7",
-            "OBJ_19",
-            "OBJ_20",
-            "OBJ_22",
-            "OBJ_23",
-            "OBJ_24",
-            "OBJ_25",
-            "OBJ_26"
-         );
-         path = "";
-         sourceTree = "<group>";
-      };
-      "OBJ_6" = {
-         isa = "PBXFileReference";
-         explicitFileType = "sourcecode.swift";
-         path = "Package.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_7" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_8",
-            "OBJ_9",
-            "OBJ_10",
-            "OBJ_11",
-            "OBJ_12",
-            "OBJ_13",
-            "OBJ_14",
-            "OBJ_15",
-            "OBJ_16",
-            "OBJ_17",
-            "OBJ_18"
-         );
-         name = "Sources";
-         path = "Sources";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_8" = {
-         isa = "PBXFileReference";
-         path = "Action.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_9" = {
-         isa = "PBXFileReference";
-         path = "Cancellation.swift";
-         sourceTree = "<group>";
-      };
-   };
-   rootObject = "OBJ_1";
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		OBJ_32 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Action.swift */; };
+		OBJ_33 /* Cancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Cancellation.swift */; };
+		OBJ_34 /* HookObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* HookObserver.swift */; };
+		OBJ_35 /* HookObservingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* HookObservingView.swift */; };
+		OBJ_36 /* HookObservingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* HookObservingViewController.swift */; };
+		OBJ_37 /* InvisibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* InvisibleView.swift */; };
+		OBJ_38 /* KeyValueObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* KeyValueObserver.swift */; };
+		OBJ_39 /* LifecycleHooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* LifecycleHooking.swift */; };
+		OBJ_40 /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* SwiftExtensions.swift */; };
+		OBJ_41 /* UIView+LifecycleHooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* UIView+LifecycleHooking.swift */; };
+		OBJ_42 /* UIViewController+LifecycleHooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* UIViewController+LifecycleHooking.swift */; };
+		OBJ_49 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		"LifecycleHooks::LifecycleHooks::Product" /* LifecycleHooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LifecycleHooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* HookObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookObserver.swift; sourceTree = "<group>"; };
+		OBJ_11 /* HookObservingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookObservingView.swift; sourceTree = "<group>"; };
+		OBJ_12 /* HookObservingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookObservingViewController.swift; sourceTree = "<group>"; };
+		OBJ_13 /* InvisibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvisibleView.swift; sourceTree = "<group>"; };
+		OBJ_14 /* KeyValueObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueObserver.swift; sourceTree = "<group>"; };
+		OBJ_15 /* LifecycleHooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleHooking.swift; sourceTree = "<group>"; };
+		OBJ_16 /* SwiftExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
+		OBJ_17 /* UIView+LifecycleHooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LifecycleHooking.swift"; sourceTree = "<group>"; };
+		OBJ_18 /* UIViewController+LifecycleHooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LifecycleHooking.swift"; sourceTree = "<group>"; };
+		OBJ_22 /* LifecycleHooks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LifecycleHooks; sourceTree = SOURCE_ROOT; };
+		OBJ_23 /* Example */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Example; sourceTree = SOURCE_ROOT; };
+		OBJ_24 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		OBJ_25 /* LifecycleHooks.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = LifecycleHooks.podspec; sourceTree = "<group>"; };
+		OBJ_26 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_8 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		OBJ_9 /* Cancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellation.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_19 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"LifecycleHooks::LifecycleHooks::Product" /* LifecycleHooks.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_19 /* Tests */,
+				OBJ_20 /* Products */,
+				OBJ_22 /* LifecycleHooks */,
+				OBJ_23 /* Example */,
+				OBJ_24 /* LICENSE */,
+				OBJ_25 /* LifecycleHooks.podspec */,
+				OBJ_26 /* README.md */,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* Action.swift */,
+				OBJ_9 /* Cancellation.swift */,
+				OBJ_10 /* HookObserver.swift */,
+				OBJ_11 /* HookObservingView.swift */,
+				OBJ_12 /* HookObservingViewController.swift */,
+				OBJ_13 /* InvisibleView.swift */,
+				OBJ_14 /* KeyValueObserver.swift */,
+				OBJ_15 /* LifecycleHooking.swift */,
+				OBJ_16 /* SwiftExtensions.swift */,
+				OBJ_17 /* UIView+LifecycleHooking.swift */,
+				OBJ_18 /* UIViewController+LifecycleHooking.swift */,
+			);
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"LifecycleHooks::LifecycleHooks" /* LifecycleHooks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_28 /* Build configuration list for PBXNativeTarget "LifecycleHooks" */;
+			buildPhases = (
+				OBJ_31 /* Sources */,
+				OBJ_43 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifecycleHooks;
+			productName = LifecycleHooks;
+			productReference = "LifecycleHooks::LifecycleHooks::Product" /* LifecycleHooks.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"LifecycleHooks::SwiftPMPackageDescription" /* LifecycleHooksPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_45 /* Build configuration list for PBXNativeTarget "LifecycleHooksPackageDescription" */;
+			buildPhases = (
+				OBJ_48 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifecycleHooksPackageDescription;
+			productName = LifecycleHooksPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "LifecycleHooks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"LifecycleHooks::LifecycleHooks" /* LifecycleHooks */,
+				"LifecycleHooks::SwiftPMPackageDescription" /* LifecycleHooksPackageDescription */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_32 /* Action.swift in Sources */,
+				OBJ_33 /* Cancellation.swift in Sources */,
+				OBJ_34 /* HookObserver.swift in Sources */,
+				OBJ_35 /* HookObservingView.swift in Sources */,
+				OBJ_36 /* HookObservingViewController.swift in Sources */,
+				OBJ_37 /* InvisibleView.swift in Sources */,
+				OBJ_38 /* KeyValueObserver.swift in Sources */,
+				OBJ_39 /* LifecycleHooking.swift in Sources */,
+				OBJ_40 /* SwiftExtensions.swift in Sources */,
+				OBJ_41 /* UIView+LifecycleHooking.swift in Sources */,
+				OBJ_42 /* UIViewController+LifecycleHooking.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_49 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = LifecycleHooks.xcodeproj/LifecycleHooks_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = LifecycleHooks;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = LifecycleHooks;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = LifecycleHooks.xcodeproj/LifecycleHooks_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = LifecycleHooks;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = LifecycleHooks;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_2 /* Build configuration list for PBXProject "LifecycleHooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_28 /* Build configuration list for PBXNativeTarget "LifecycleHooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_29 /* Debug */,
+				OBJ_30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_45 /* Build configuration list for PBXNativeTarget "LifecycleHooksPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_46 /* Debug */,
+				OBJ_47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
 }
